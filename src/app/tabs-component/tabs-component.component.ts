@@ -5,6 +5,8 @@ import {
   Input,
   QueryList,
   TemplateRef,
+  ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { TabDirective } from './tab.directive';
 
@@ -17,7 +19,10 @@ export class TabsComponentComponent implements AfterContentInit {
   @ContentChildren(TabDirective)
   tabs: QueryList<TabDirective> | undefined;
 
-  currentSelectedTab: TemplateRef<any> | undefined;
+  currentSelectedTab: TemplateRef<any> | undefined | null;
+
+  @ViewChild('selectedTab', { read: ViewContainerRef })
+  selectedTab: ViewContainerRef | undefined;
 
   constructor() {}
 
@@ -28,8 +33,12 @@ export class TabsComponentComponent implements AfterContentInit {
   }
 
   onClick(tabIndex: number) {
+    this.selectedTab?.clear();
     if (this.tabs && this.tabs.get(tabIndex) != null) {
       this.currentSelectedTab = this.tabs.get(tabIndex)?.template;
+      if (this.currentSelectedTab) {
+        this.selectedTab?.createEmbeddedView(this.currentSelectedTab);
+      }
     }
   }
 }

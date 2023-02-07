@@ -6,8 +6,6 @@
   </div>
 
   <div class="tab-content">
-    <ng-container
-      [ngTemplateOutlet]="currentSelectedTab ? currentSelectedTab : null"
-    ></ng-container>
+    <ng-container #selectedTab></ng-container>
   </div>
 </div>
