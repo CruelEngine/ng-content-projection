@@ -7,20 +7,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { MaterialSharedModule } from './material-shared/material-shared.module';
 import { TabsComponentComponent } from './tabs-component/tabs-component.component';
+import { TabDirective } from './tabs-component/tab.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PopupWindowComponent,
-    TabsComponentComponent
+    TabsComponentComponent,
+    TabDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialSharedModule
+    MaterialSharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

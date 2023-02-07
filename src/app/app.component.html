@@ -1,1 +1,11 @@
-<app-tabs-component [tabs]="['tab1', 'tab2']"> </app-tabs-component>
+<app-tabs-component [tabs]="['tab1', 'tab2', 'tab3']">
+  <ng-template tab>
+    <div>Tab 1</div>
+  </ng-template>
+  <ng-template tab>
+    <div>Tab 2</div>
+  </ng-template>
+  <ng-template tab>
+    <div>Tab 3</div>
+  </ng-template>
+</app-tabs-component>

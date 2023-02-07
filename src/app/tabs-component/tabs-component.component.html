@@ -1,16 +1,11 @@
 <div class="tabs">
   <div class="tab-buttons">
-    <button *ngFor="let tab of tabs" (click)="onClick(tab)">
+    <button *ngFor="let tab of tabs; let i = index" (click)="onClick(i)">
       {{ tab }}
     </button>
   </div>
 
   <div class="tab-content">
-    <ng-container
-      *ngIf="selectedTab === 'tab1'; then tab1; else tab2"
-    ></ng-container>
+    <ng-container [ngTemplateOutlet]="currentSelectedTab"></ng-container>
   </div>
 </div>
-
-<ng-template #tab1> Tab1 Content</ng-template>
-<ng-template #tab2> Tab2 Content</ng-template>
