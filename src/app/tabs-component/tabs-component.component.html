@@ -1,11 +1,13 @@
 <div class="tabs">
   <div class="tab-buttons">
     <button *ngFor="let tab of tabs; let i = index" (click)="onClick(i)">
-      {{ tab }}
+      {{ tab.name }}
     </button>
   </div>
 
   <div class="tab-content">
-    <ng-container [ngTemplateOutlet]="currentSelectedTab"></ng-container>
+    <ng-container
+      [ngTemplateOutlet]="currentSelectedTab ? currentSelectedTab : null"
+    ></ng-container>
   </div>
 </div>

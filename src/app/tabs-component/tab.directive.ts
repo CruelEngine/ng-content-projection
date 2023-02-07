@@ -1,8 +1,13 @@
-import { Directive, TemplateRef } from '@angular/core';
+import { Directive, Input, TemplateRef } from '@angular/core';
 
 @Directive({
   selector: '[tab]',
 })
 export class TabDirective {
-  constructor() {}
+  @Input()
+  name: string | null;
+
+  constructor() {
+    this.name = null;
+  }
 }
