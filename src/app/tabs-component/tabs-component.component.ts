@@ -37,7 +37,10 @@ export class TabsComponentComponent implements AfterContentInit {
     if (this.tabs && this.tabs.get(tabIndex) != null) {
       this.currentSelectedTab = this.tabs.get(tabIndex)?.template;
       if (this.currentSelectedTab) {
-        this.selectedTab?.createEmbeddedView(this.currentSelectedTab);
+        this.selectedTab?.createEmbeddedView(this.currentSelectedTab, {
+          $implicit: 'hello',
+          data: 'hello world',
+        });
       }
     }
   }

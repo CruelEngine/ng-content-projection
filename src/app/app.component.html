@@ -8,7 +8,8 @@
   <ng-template tab="tab3">
     <div>Tab 3</div>
   </ng-template>
-  <ng-template tab="tab4">
+  <ng-template tab="tab4" let-row let-data="data">
     <div>Tab 4</div>
+    {{ data }}
   </ng-template>
 </app-tabs-component>
