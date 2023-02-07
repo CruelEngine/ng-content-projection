@@ -1,0 +1,34 @@
+.modal-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #DCDCDC;
+    opacity: 0.7;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left:50%;
+    border:2px solid black;
+    width: 30%;
+    height: 30%;
+    z-index: 999;
+
+    .modal__title {
+        background: rgb(82, 82, 248);
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        height: fit-content;
+        padding: 0.5rem;
+        height: 10%;
+        box-sizing: border-box;
+    }
+
+    .modal__content {
+        background: white;
+        height: 90%;
+    }
+}
