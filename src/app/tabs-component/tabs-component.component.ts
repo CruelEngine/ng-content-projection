@@ -14,28 +14,22 @@ import { TabDirective } from './tab.directive';
   styleUrls: ['./tabs-component.component.scss'],
 })
 export class TabsComponentComponent implements AfterContentInit {
-  @ContentChildren(TabDirective, { read: TemplateRef<any> })
-  tabTemplates: QueryList<TemplateRef<TabDirective>> | null;
-
   @ContentChildren(TabDirective)
   tabs: QueryList<TabDirective> | undefined;
 
   currentSelectedTab: TemplateRef<any> | undefined;
 
-  constructor() {
-    this.tabTemplates = null;
-  }
+  constructor() {}
 
   ngAfterContentInit(): void {
-    console.log(this.tabTemplates);
-    if (this.tabTemplates && this.tabTemplates.length > 0) {
-      this.currentSelectedTab = this.tabTemplates.get(0);
+    if (this.tabs && this.tabs.length > 0) {
+      this.currentSelectedTab = this.tabs.get(0)?.template;
     }
   }
 
   onClick(tabIndex: number) {
-    if (this.tabTemplates && this.tabTemplates.get(tabIndex) != null) {
-      this.currentSelectedTab = this.tabTemplates.get(tabIndex);
+    if (this.tabs && this.tabs.get(tabIndex) != null) {
+      this.currentSelectedTab = this.tabs.get(tabIndex)?.template;
     }
   }
 }
