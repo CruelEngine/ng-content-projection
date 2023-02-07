@@ -1,0 +1,15 @@
+<div class="tabs">
+  <div class="tab-buttons">
+    <button (click)="onClick('tab1')">Tab 1</button>
+    <button (click)="onClick('tab2')">Tab 2</button>
+  </div>
+
+  <div class="tab-content">
+    <ng-container
+      *ngIf="selectedTab === 'tab1'; then tab1; else tab2"
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #tab1> Tab1 </ng-template>
+<ng-template #tab2> Tab2 </ng-template>

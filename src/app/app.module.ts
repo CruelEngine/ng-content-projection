@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { MaterialSharedModule } from './material-shared/material-shared.module';
+import { TabsComponentComponent } from './tabs-component/tabs-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PopupWindowComponent
+    PopupWindowComponent,
+    TabsComponentComponent
   ],
   imports: [
     BrowserModule,
