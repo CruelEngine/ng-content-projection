@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tabs-component',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabs-component.component.scss'],
 })
 export class TabsComponentComponent {
+  @Input()
+  tabs: string[] = [];
+
   selectedTab: string | undefined;
 
   constructor() {
